@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnSalesTracking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sales Tracking"
+        android:background="#BB0038"
+        android:textColor="#FFF" />
+
+    <Button
+        android:id="@+id/btnStaffReports"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Staff Reports"
+        android:background="#BB0038"
+        android:textColor="#FFF"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btnRoleManagement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Role Management"
+        android:background="#BB0038"
+        android:textColor="#FFF"
+        android:layout_marginTop="16dp" />
+</LinearLayout>

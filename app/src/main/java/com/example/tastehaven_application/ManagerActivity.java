@@ -2,62 +2,90 @@ package com.example.tastehaven_application;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
+import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class ManagerActivity extends AppCompatActivity {
 
-    private ListView userListView;
-    private FirebaseDatabase database;
-    private DatabaseReference usersRef;
+    private Button btnManageMenu, btnManageReservations, btnViewReports, btnInventory, btnAssignStaff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manager);
 
-        userListView = findViewById(R.id.userListView);
-        database = FirebaseDatabase.getInstance();
-        usersRef = database.getReference("users");
+        // Initialize Buttons
+        btnManageMenu = findViewById(R.id.btnManageMenu);
+        btnManageReservations = findViewById(R.id.btnManageReservations);
+        btnViewReports = findViewById(R.id.btnViewReports);
+        btnInventory = findViewById(R.id.btnInventory);
+        btnAssignStaff = findViewById(R.id.btnAssignStaff);
 
-        usersRef.addValueEventListener(new ValueEventListener() {
+        // Set onClickListeners for each button
+        btnManageMenu.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                ArrayList<String> userList = new ArrayList<>();
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    String userName = snapshot.child("name").getValue(String.class);
-                    String userRole = snapshot.child("role").getValue(String.class);
-                    userList.add(userName + " - " + userRole);
-                }
-
-                ArrayAdapter<String> userAdapter = new ArrayAdapter<>(ManagerActivity.this, android.R.layout.simple_list_item_1, userList);
-                userListView.setAdapter(userAdapter);
+            public void onClick(View v) {
+                openMenuActivity();
             }
+        });
 
+        btnManageReservations.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(ManagerActivity.this, "Failed to load users.", Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                openReservationActivity();
+            }
+        });
+
+        btnViewReports.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openReportsActivity();
+            }
+        });
+
+        btnInventory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openInventoryActivity();
+            }
+        });
+
+        btnAssignStaff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openStaffActivity();
             }
         });
     }
 
-    // Method to update the role of a user
-    public void updateUserRole(String userId, String newRole) {
-        usersRef.child(userId).child("role").setValue(newRole);
+    // Method to navigate to the Menu Management activity
+    private void openMenuActivity() {
+        Intent intent = new Intent(this, MenuActivity.class);
+        startActivity(intent);
+    }
+
+    // Method to navigate to the Reservations Management activity
+    private void openReservationActivity() {
+        Intent intent = new Intent(this, ReservationManagementActivity.class);
+        startActivity(intent);
+    }
+
+    // Method to navigate to the Reports activity
+    private void openReportsActivity() {
+        Intent intent = new Intent(this, AdminDashboardActivity.class);
+        startActivity(intent);
+    }
+
+    // Method to navigate to the Inventory Management activity
+    private void openInventoryActivity() {
+        Intent intent = new Intent(this, InventoryManagementActivity.class);
+        startActivity(intent);
+    }
+
+    // Method to navigate to the Staff Management activity
+    private void openStaffActivity() {
+        Intent intent = new Intent(this, AdminDashboardActivity.class);
+        startActivity(intent);
     }
 }
-

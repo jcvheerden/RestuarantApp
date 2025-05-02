@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/etInventoryId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Item ID" />
+
+    <EditText
+        android:id="@+id/etNewQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="New Quantity (optional)"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/etNewThreshold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="New Reorder Threshold (optional)"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btnUpdateInventory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Inventory"
+        android:layout_marginTop="12dp"
+        android:background="#BB0038"
+        android:textColor="#FFF" />
+</LinearLayout>

@@ -7,28 +7,28 @@
     android:background="#FFFFFF">
 
     <Button
-        android:id="@+id/btnAddMenuItem"
+        android:id="@+id/btnViewReservations"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Menu Item"
+        android:text="View Reservations"
         android:background="#BB0038"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/btnEditMenuItem"
+        android:id="@+id/btnUpdateReservation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Edit Menu Item"
+        android:text="Update Reservation"
         android:background="#BB0038"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/btnRemoveMenuItem"
+        android:id="@+id/btnCancelReservation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Remove Menu Item"
+        android:text="Cancel Reservation"
         android:background="#BB0038"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />

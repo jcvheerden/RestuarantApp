@@ -1,12 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="16dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <ListView
-        android:id="@+id/userListView"
+    <!-- Button to manage menu items -->
+    <Button
+        android:id="@+id/btnManageMenu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Manage Menu"
+        android:background="#BB0038"
+        android:textColor="#FFFFFF" />
+
+    <!-- Button to manage reservations -->
+    <Button
+        android:id="@+id/btnManageReservations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manage Reservations"
+        android:background="#BB0038"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="16dp" />
+
+    <!-- Button to view reports -->
+    <Button
+        android:id="@+id/btnViewReports"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Reports"
+        android:background="#BB0038"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="16dp" />
+
+    <!-- Button to manage inventory -->
+    <Button
+        android:id="@+id/btnInventory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manage Inventory"
+        android:background="#BB0038"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="16dp" />
+
+    <!-- Button to assign staff -->
+    <Button
+        android:id="@+id/btnAssignStaff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Assign Staff"
+        android:background="#BB0038"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="16dp" />
 
 </LinearLayout>

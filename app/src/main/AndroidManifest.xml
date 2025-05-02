@@ -16,7 +16,7 @@
 
         <!-- MainActivity - Entry point of the app -->
         <activity
-            android:name=".MainActivity"
+            android:name=".ManagerActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,59 +25,60 @@
         </activity>
 
         <activity
-            android:name=".ChefActivity"
+            android:name=".AdminDashboardActivity"
             android:exported="true" />
         <activity
-            android:name=".CustomerDashboardActivity"
+            android:name=".AddMenuItemActivity"
             android:exported="true" />
 
         <activity
-            android:name=".FeedbackActivity"
+            android:name=".AddInventoryItemActivity"
             android:exported="true" />
         <activity
-            android:name=".InventoryActivity"
+            android:name=".EditMenuItemActivity"
             android:exported="true" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".InventoryManagementActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".ManagerInventory"
             android:exported="true" />
         <activity
-            android:name=".ManagerActivity"
+            android:name=".ManagerReservation"
             android:exported="true" />
         <activity
-            android:name=".ManagerDashboardActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ManagerInventoryActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ManagerMenuActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ManagerOrdersActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ManagerReservationsActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ManagerRoleActivity"
+            android:name=".ManagerStaff"
             android:exported="true" />
         <activity
             android:name=".MenuActivity"
             android:exported="true" />
         <activity
-            android:name=".OrderActivity"
+            android:name=".RemoveMenuItemActivity"
             android:exported="true" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".ReservationCancel"
             android:exported="true" />
         <activity
-            android:name=".ReservationActivity"
+            android:name=".ReservationManagementActivity"
             android:exported="true" />
         <activity
-            android:name=".ReserveTableActivity"
+            android:name=".ReservationView"
+            android:exported="true" />
+        <activity
+            android:name=".RoleManagementActivity"
             android:exported="true" />
         <activity
             android:name=".SalesReportActivity"
+            android:exported="true" />
+        <activity
+            android:name=".UpdateInventoryItemActivity"
+            android:exported="true" />
+        <activity
+            android:name=".UpdateReservationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ViewInventoryActivity"
             android:exported="true" />
 
         <!-- Add more activities here if needed -->

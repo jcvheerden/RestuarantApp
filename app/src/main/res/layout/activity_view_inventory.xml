@@ -1,14 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:padding="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tvTotalSales"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewInventory"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Total Sales: $0.00"
-        android:textSize="24sp"
-        android:textColor="#D8921f" />
+        android:layout_height="match_parent"/>
 </LinearLayout>

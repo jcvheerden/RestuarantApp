@@ -7,28 +7,19 @@
     android:background="#FFFFFF">
 
     <Button
-        android:id="@+id/btnAddMenuItem"
+        android:id="@+id/btnAssignStaff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Menu Item"
+        android:text="Assign Staff Roles"
         android:background="#BB0038"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/btnEditMenuItem"
+        android:id="@+id/btnViewStaffReport"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Edit Menu Item"
-        android:background="#BB0038"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp" />
-
-    <Button
-        android:id="@+id/btnRemoveMenuItem"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Remove Menu Item"
+        android:text="View Staff Reports"
         android:background="#BB0038"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />

@@ -7,28 +7,28 @@
     android:background="#FFFFFF">
 
     <Button
-        android:id="@+id/btnAddMenuItem"
+        android:id="@+id/btnViewInventory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Menu Item"
+        android:text="View Inventory"
         android:background="#BB0038"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/btnEditMenuItem"
+        android:id="@+id/btnUpdateStock"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Edit Menu Item"
+        android:text="Update Stock"
         android:background="#BB0038"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/btnRemoveMenuItem"
+        android:id="@+id/btnReorderItems"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Remove Menu Item"
+        android:text="Reorder Items"
         android:background="#BB0038"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />

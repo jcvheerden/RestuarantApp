@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/etCancelReservationId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Reservation ID" />
+
+    <Button
+        android:id="@+id/btnCancelReservation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel Reservation"
+        android:layout_marginTop="10dp"
+        android:background="#BB0038"
+        android:textColor="#FFF" />
+</LinearLayout>
