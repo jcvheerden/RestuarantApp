@@ -1,0 +1,87 @@
+{
+  "project_info": {
+    "project_number": "172942229835",
+    "firebase_url": "https://taste-haven-9e3f4-default-rtdb.firebaseio.com",
+    "project_id": "taste-haven-9e3f4",
+    "storage_bucket": "taste-haven-9e3f4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172942229835:android:1ff87ec6764e429ac268ce",
+        "android_client_info": {
+          "package_name": "com.example.demoproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxMfezmUdaPGc4ZFB79dM9jFpWNTlKuAM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172942229835:android:937c279ba6f24ebbc268ce",
+        "android_client_info": {
+          "package_name": "com.example.restuarant_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxMfezmUdaPGc4ZFB79dM9jFpWNTlKuAM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172942229835:android:c7adc78acdb07e24c268ce",
+        "android_client_info": {
+          "package_name": "com.example.tastehaven_application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxMfezmUdaPGc4ZFB79dM9jFpWNTlKuAM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172942229835:android:7e20109a1795b98fc268ce",
+        "android_client_info": {
+          "package_name": "com.example.tastehavendemo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxMfezmUdaPGc4ZFB79dM9jFpWNTlKuAM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFEB3B">
+
+    <TextView
+        android:text="Manage Menu"
+        android:textSize="26sp"
+        android:textColor="#1976D2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:hint="Item Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/edit_text_bg"/>
+
+    <EditText
+        android:id="@+id/descriptionEditText"
+        android:hint="Description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/edit_text_bg"/>
+
+    <EditText
+        android:id="@+id/priceEditText"
+        android:hint="Price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/edit_text_bg"/>
+
+    <Button
+        android:id="@+id/addItemButton"
+        android:text="Add Item"
+        android:textColor="#fff"
+        android:background="#1976D2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/removeItemButton"
+        android:text="Remove Item"
+        android:textColor="#fff"
+        android:background="#1976D2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"/>
+
+    <RecyclerView
+        android:id="@+id/menuRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

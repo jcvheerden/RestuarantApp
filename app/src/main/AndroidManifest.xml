@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.tastehaven_application">
 
     <application
         android:allowBackup="true"
@@ -12,15 +13,43 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TasteHaven_Application"
         tools:targetApi="31">
+
+        <!-- MainActivity - Entry point of the app -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- DashboardActivity - For Manager to view orders, reservations, and inventory -->
+        <activity android:name=".DashboardActivity" android:exported="true" />
+
+        <!-- ReservationActivity - For Customers to make reservations -->
+        <activity android:name=".ReservationActivity" android:exported="true" />
+
+        <!-- OrderActivity - For Waiters to take and send orders -->
+        <activity android:name=".OrderActivity" android:exported="true" />
+
+        <!-- SalesReportActivity - For Manager to view sales report -->
+        <activity android:name=".SalesReportActivity" android:exported="true" />
+
+        <!-- InventoryActivity - For Manager/Staff to manage inventory -->
+        <activity android:name=".InventoryActivity" android:exported="true" />
+
+        <!-- OrdersOverviewActivity - For Manager to overview orders -->
+        <activity android:name=".OrdersOverviewActivity" android:exported="true" />
+
+        <!-- ReservationsOverviewActivity - For Manager to overview reservations -->
+        <activity android:name=".ReservationsOverviewActivity" android:exported="true" />
+
+        <!-- InventoryOverviewActivity - For Manager to overview inventory -->
+        <activity android:name=".InventoryOverviewActivity" android:exported="true" />
+
+        <!-- Add more activities here if needed -->
+
     </application>
 
 </manifest>
