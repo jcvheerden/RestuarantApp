@@ -3,12 +3,15 @@ package com.example.tastehaven_application;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -42,7 +45,7 @@ public class SalesReportActivity extends AppCompatActivity {
         String todayDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
 
         // Query Firebase for orders today
-        ordersRef.orderByChild("order_time").startAt(todayDate + " 00:00:00")
+        ordersRef.orderByChild("orderTime").startAt(todayDate + " 00:00:00")
                 .endAt(todayDate + " 23:59:59")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
@@ -62,10 +65,10 @@ public class SalesReportActivity extends AppCompatActivity {
                                 if ("served".equals(order.getStatus())) {
                                     completedOrders++;
 
-                                    for (DataSnapshot itemSnapshot : snapshot.child("order_items").getChildren()) {
-                                        OrderItem orderItem = itemSnapshot.getValue(OrderItem.class);
+                                    // Iterate through the list of OrderItems
+                                    for (OrderItem orderItem : order.getOrderItems()) {
                                         if (orderItem != null) {
-                                            totalSales += orderItem.getQuantity() * orderItem.getPrice();
+                                            totalSales += orderItem.getQuantity() * orderItem.getPrice(); // Correctly calculate total sales
                                         }
                                     }
                                 }

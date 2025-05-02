@@ -1,5 +1,20 @@
 package com.example.tastehaven_application;
 
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class OrderActivity extends AppCompatActivity {
 
     private EditText tableNumberEditText;
@@ -24,20 +39,22 @@ public class OrderActivity extends AppCompatActivity {
 
         placeOrderButton.setOnClickListener(v -> {
             String table = tableNumberEditText.getText().toString();
-            ArrayList<String> selectedItems = new ArrayList<>();
+            ArrayList<OrderItem> selectedItems = new ArrayList<>();
+
             for (int i = 0; i < items.size(); i++) {
                 if (menuListView.isItemChecked(i)) {
-                    selectedItems.add(items.get(i));
+                    selectedItems.add(new OrderItem(items.get(i), 10.0, 1)); // Example price and quantity
                 }
             }
 
             Order order = new Order(table, "waiter123", "received", System.currentTimeMillis(), selectedItems);
             DatabaseReference ref = FirebaseDatabase.getInstance().getReference("orders");
             String id = ref.push().getKey();
-            if (id != null) ref.child(id).setValue(order);
+            if (id != null) {
+                ref.child(id).setValue(order);
+            }
 
             Toast.makeText(this, "Order placed!", Toast.LENGTH_SHORT).show();
         });
     }
 }
-
