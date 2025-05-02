@@ -1,15 +1,11 @@
 package com.example.tastehaven_application;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.menu.MenuAdapter;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,7 +16,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ManagerMenuActivity extends AppCompatActivity {
@@ -38,6 +33,7 @@ public class ManagerMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manager_menu);
 
+        // Initialize UI elements
         nameEditText = findViewById(R.id.nameEditText);
         descriptionEditText = findViewById(R.id.descriptionEditText);
         priceEditText = findViewById(R.id.priceEditText);
@@ -45,16 +41,20 @@ public class ManagerMenuActivity extends AppCompatActivity {
         removeItemButton = findViewById(R.id.removeItemButton);
         menuRecyclerView = findViewById(R.id.menuRecyclerView);
 
+        // Initialize Firebase database references
         database = FirebaseDatabase.getInstance();
         menuRef = database.getReference("menu_items");
 
+        // Initialize the list and adapter for the menu
         menuList = new ArrayList<>();
-        menuAdapter = new MenuAdapter(menuList);
+        menuAdapter = new MenuAdapter(this, menuList);
         menuRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         menuRecyclerView.setAdapter(menuAdapter);
 
+        // Load the menu items
         loadMenuItems();
 
+        // Handle add item button click
         addItemButton.setOnClickListener(v -> {
             String name = nameEditText.getText().toString().trim();
             String description = descriptionEditText.getText().toString().trim();
@@ -65,6 +65,7 @@ public class ManagerMenuActivity extends AppCompatActivity {
             }
         });
 
+        // Handle remove item button click
         removeItemButton.setOnClickListener(v -> {
             String name = nameEditText.getText().toString().trim();
             removeMenuItem(name);
@@ -72,6 +73,7 @@ public class ManagerMenuActivity extends AppCompatActivity {
     }
 
     private void loadMenuItems() {
+        // Load menu items from Firebase database
         menuRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -93,13 +95,16 @@ public class ManagerMenuActivity extends AppCompatActivity {
     private void addMenuItem(String name, String description, String price) {
         String menuId = menuRef.push().getKey();
         if (menuId != null) {
-            MenuItem menuItem = new MenuItem(name, description, Double.parseDouble(price));
+            // Create a new menu item and add it to Firebase
+            MenuItem menuItem = new MenuItem(menuId, name, Double.parseDouble(price), description, "");  // Pass empty imageUrl
             menuRef.child(menuId).setValue(menuItem);
             Toast.makeText(ManagerMenuActivity.this, "Item added successfully", Toast.LENGTH_SHORT).show();
         }
     }
 
+
     private void removeMenuItem(String name) {
+        // Search for the item in the database and remove it
         menuRef.orderByChild("name").equalTo(name).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -120,4 +125,3 @@ public class ManagerMenuActivity extends AppCompatActivity {
         });
     }
 }
-

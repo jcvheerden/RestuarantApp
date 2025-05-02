@@ -3,9 +3,15 @@
     android:orientation="vertical"
     android:padding="24dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center">
+    android:layout_height="match_parent">
 
+    <!-- RecyclerView for displaying menu items -->
+    <RecyclerView
+        android:id="@+id/menuRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- Your existing form for adding menu items (optional, can be removed if not needed) -->
     <EditText
         android:id="@+id/nameEditText"
         android:layout_width="match_parent"

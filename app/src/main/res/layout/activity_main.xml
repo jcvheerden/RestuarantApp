@@ -4,15 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/roleEditText"
-        android:hint="Enter role (customer/waiter/manager)"
+    <Button
+        android:id="@+id/customerButton"
+        android:text="Customer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:backgroundTint="#BB0038" />
 
     <Button
-        android:id="@+id/loginButton"
-        android:text="Continue"
+        android:id="@+id/waiterButton"
+        android:text="Waiter"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:backgroundTint="#D8921F" />
+
+    <Button
+        android:id="@+id/managerButton"
+        android:text="Manager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#BB0038" />
 </LinearLayout>

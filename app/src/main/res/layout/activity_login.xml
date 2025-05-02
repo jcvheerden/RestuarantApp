@@ -7,7 +7,7 @@
     android:background="#FFEB3B">
 
     <ImageView
-        android:src="@drawable/logo"
+
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
@@ -21,7 +21,7 @@
         android:padding="10dp"
         android:textColor="#000"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/edit_text_bg"/>
+        android:background="@color/white"/>
 
     <EditText
         android:id="@+id/passwordEditText"
@@ -31,7 +31,7 @@
         android:padding="10dp"
         android:textColor="#000"
         android:layout_marginBottom="24dp"
-        android:background="@drawable/edit_text_bg"
+        android:background="@color/white"
         android:inputType="textPassword"/>
 
     <Button

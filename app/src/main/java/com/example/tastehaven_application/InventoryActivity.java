@@ -33,14 +33,14 @@ public class InventoryActivity extends AppCompatActivity {
 
         backToDashboardButton = findViewById(R.id.backToDashboardButton);
         backToDashboardButton.setOnClickListener(v -> {
-            Intent intent = new Intent(InventoryActivity.this, DashboardActivity.class);
+            Intent intent = new Intent(InventoryActivity.this, ManagerDashboardActivity.class);
             startActivity(intent);
             finish();
         });
 
         inventoryRef = FirebaseDatabase.getInstance().getReference("inventory");
 
-        adapter = new InventoryAdapter(inventoryList, inventoryRef, this);
+        adapter = new InventoryAdapter(inventoryList);
         recyclerView.setAdapter(adapter);
 
         loadInventoryItems();

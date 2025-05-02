@@ -1,65 +1,38 @@
 package com.example.tastehaven_application;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MenuActivity extends AppCompatActivity {
 
-    private EditText nameEditText, priceEditText, descriptionEditText, imageUrlEditText;
-    private Button addButton;
-
-    private FirebaseDatabase mDatabase;
-    private DatabaseReference mMenuRef;
+    private RecyclerView menuRecyclerView;
+    private MenuAdapter menuAdapter;
+    private List<MenuItem> menuItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        mDatabase = FirebaseDatabase.getInstance();
-        mMenuRef = mDatabase.getReference("menu");
+        menuRecyclerView = findViewById(R.id.menuRecyclerView); // Add RecyclerView in your XML layout
+        menuRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        nameEditText = findViewById(R.id.nameEditText);
-        priceEditText = findViewById(R.id.priceEditText);
-        descriptionEditText = findViewById(R.id.descriptionEditText);
-        imageUrlEditText = findViewById(R.id.imageUrlEditText);
-        addButton = findViewById(R.id.addButton);
+        // Creating dummy data
+        menuItems = new ArrayList<>();
+        menuItems.add(new MenuItem("1", "Spaghetti", 12.99, "Delicious spaghetti with marinara sauce.", "image_url_1"));
+        menuItems.add(new MenuItem("2", "Cheeseburger", 9.99, "Juicy cheeseburger with all the fixings.", "image_url_2"));
+        menuItems.add(new MenuItem("3", "Caesar Salad", 8.49, "Fresh romaine lettuce with Caesar dressing.", "image_url_3"));
+        menuItems.add(new MenuItem("4", "Pizza Margherita", 14.99, "Classic pizza with mozzarella and basil.", "image_url_4"));
+        menuItems.add(new MenuItem("5", "Tacos", 10.49, "Spicy tacos with beef, lettuce, and salsa.", "image_url_5"));
 
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addMenuItem();
-            }
-        });
-    }
-
-    private void addMenuItem() {
-        String name = nameEditText.getText().toString().trim();
-        String priceStr = priceEditText.getText().toString().trim();
-        String description = descriptionEditText.getText().toString().trim();
-        String imageUrl = imageUrlEditText.getText().toString().trim();
-
-        if (name.isEmpty() || priceStr.isEmpty() || description.isEmpty() || imageUrl.isEmpty()) {
-            Toast.makeText(MenuActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        double price = Double.parseDouble(priceStr);
-        String id = mMenuRef.push().getKey();
-
-        MenuItem menuItem = new MenuItem(id, name, price, description, imageUrl);
-        mMenuRef.child(id).setValue(menuItem);
-
-        Toast.makeText(MenuActivity.this, "Menu item added", Toast.LENGTH_SHORT).show();
-        finish();
+        // Initialize the adapter and set it to the RecyclerView
+        menuAdapter = new MenuAdapter(this, menuItems);
+        menuRecyclerView.setAdapter(menuAdapter);
     }
 }

@@ -24,29 +24,61 @@
             </intent-filter>
         </activity>
 
-        <!-- DashboardActivity - For Manager to view orders, reservations, and inventory -->
-        <activity android:name=".DashboardActivity" android:exported="true" />
+        <activity
+            android:name=".ChefActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CustomerDashboardActivity"
+            android:exported="true" />
 
-        <!-- ReservationActivity - For Customers to make reservations -->
-        <activity android:name=".ReservationActivity" android:exported="true" />
-
-        <!-- OrderActivity - For Waiters to take and send orders -->
-        <activity android:name=".OrderActivity" android:exported="true" />
-
-        <!-- SalesReportActivity - For Manager to view sales report -->
-        <activity android:name=".SalesReportActivity" android:exported="true" />
-
-        <!-- InventoryActivity - For Manager/Staff to manage inventory -->
-        <activity android:name=".InventoryActivity" android:exported="true" />
-
-        <!-- OrdersOverviewActivity - For Manager to overview orders -->
-        <activity android:name=".OrdersOverviewActivity" android:exported="true" />
-
-        <!-- ReservationsOverviewActivity - For Manager to overview reservations -->
-        <activity android:name=".ReservationsOverviewActivity" android:exported="true" />
-
-        <!-- InventoryOverviewActivity - For Manager to overview inventory -->
-        <activity android:name=".InventoryOverviewActivity" android:exported="true" />
+        <activity
+            android:name=".FeedbackActivity"
+            android:exported="true" />
+        <activity
+            android:name=".InventoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ManagerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ManagerDashboardActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ManagerInventoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ManagerMenuActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ManagerOrdersActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ManagerReservationsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ManagerRoleActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MenuActivity"
+            android:exported="true" />
+        <activity
+            android:name=".OrderActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ReservationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ReserveTableActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SalesReportActivity"
+            android:exported="true" />
 
         <!-- Add more activities here if needed -->
 
