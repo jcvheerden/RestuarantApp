@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/selectSlotText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select a Time Slot"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"/>
+
+    <Spinner
+        android:id="@+id/availableSlotsSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selectSlotText"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/reserveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reserve Table"
+        android:layout_below="@id/availableSlotsSpinner"
+        android:layout_centerHorizontal="true"
+        android:background="#D8921f"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="30dp"/>
+</RelativeLayout>
