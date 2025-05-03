@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <EditText
+        android:id="@+id/edtTableNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Table Number"
+        android:inputType="number"
+        android:backgroundTint="#BB0038"
+        android:layout_marginBottom="10dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewMenu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btnSubmitOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit Order"
+        android:background="#D8921f"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="12dp" />
+</LinearLayout>

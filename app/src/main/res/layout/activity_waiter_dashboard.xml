@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/txtWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Waiter Dashboard"
+        android:textSize="22sp"
+        android:textColor="#BB0038"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp" />
+
+    <Button
+        android:id="@+id/btnPlaceOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Place Order"
+        android:background="#D8921f"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="20dp" />
+
+    <Button
+        android:id="@+id/btnViewOrders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Orders"
+        android:background="#D8921f"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="20dp" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:background="#BB0038"
+        android:textColor="#FFFFFF" />
+</LinearLayout>
