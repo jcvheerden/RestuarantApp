@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/orderDetailsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order details here"
+        android:textSize="16sp"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/btnPrepare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mark as Preparing"
+        android:layout_below="@id/orderDetailsTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="#D8921f"
+        android:textColor="#FFFFFF"/>
+
+    <Button
+        android:id="@+id/btnReady"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mark as Ready"
+        android:layout_below="@id/btnPrepare"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="#BB0038"
+        android:textColor="#FFFFFF"/>
+</RelativeLayout>
